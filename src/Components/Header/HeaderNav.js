@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "./HeaderNav.css";
 
 function HeaderNav() {
     const style = {
@@ -14,7 +13,7 @@ function HeaderNav() {
     const navStyle = "font-poppins-heading nav-link mx-2 text-secondary";
 
     return (
-      <ul className="nav justify-content-center border" style={style}>
+      <ul className="nav justify-content-center border nav-bar" style={style}>
         <li className="">
           <Link className={navStyle} to="/">
             <h1 className="h5" style={italic}>

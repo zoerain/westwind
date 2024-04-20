@@ -1,5 +1,4 @@
 import React from 'react';
-import "./ServiceList.css";
 
 
 function ServiceList() {
@@ -7,20 +6,48 @@ function ServiceList() {
     return (
       <main className="container text-center text-secondary mt-50">
         <section>
-          <ul className="row">
-            <li className="col">
-              <h6>Boarding</h6>
-              <p>Short description.</p>
-            </li>
-            <li className="col">
-              <h6>Horse Sales</h6>
-              <p>Short description.</p>
-            </li>
-            <li className="col">
-              <h6>Events</h6>
-              <p>Short description.</p>
-            </li>
-          </ul>
+          <div className="row">
+            <div className="col-sm-12 col-md-6 col-lg-4 my-2">
+              <div className="card custom-card">
+                <div className="card-body">
+                  <h6 className="card-title">Boarding</h6>
+                  <p className="card-text">Short description.</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-sm-12 col-md-6 col-lg-4 my-2">
+              <div className="card custom-card">
+                <div className="card-body">
+                  <h6 className="card-title">Horse Sales</h6>
+                  <p className="card-text">Short description.</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-sm-12 col-md-6 col-lg-4 my-2">
+              <div className="card custom-card">
+                <div className="card-body">
+                  <h6 className="card-title">Events/Clinics</h6>
+                  <p className="card-text">Short description.</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-sm-12 col-md-6 col-lg-4 my-2 mx-auto">
+              <div className="card custom-card">
+                <div className="card-body">
+                  <h6 className="card-title">Training</h6>
+                  <p className="card-text">Short description.</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-sm-12 col-md-6 col-lg-4 my-2 mx-auto">
+              <div className="card custom-card">
+                <div className="card-body">
+                  <h6 className="card-title">Lessons</h6>
+                  <p className="card-text">Short description.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
     );

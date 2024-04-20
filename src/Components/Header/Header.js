@@ -1,6 +1,4 @@
 import React from 'react';
-import HeaderNav from './HeaderNav';
-import "./Header.css";
 //import headerImage from './headerImage';
 
 function Header() {
