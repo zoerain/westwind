@@ -9,20 +9,37 @@ function Header() {
     };
 
 
+     const h1Style = {
+       color: "#8B4513",
+       fontFamily: '"Abril Fatface", serif',
+       fontWeight: 400,
+       fontStyle: "normal",
+       padding: "100px",
+       paddingLeft: "0px",
+     };
+
+     const westStyle = {
+        color: "#8B4513",
+     }
 
 return (
-    <div
-        className='jumbotron jumbotron-fluid text-grey border-bottom border-dark pt-0'
-        style={style}
-    >
-        <div className='container'>
-            <h1 className='display-4'>Cute and short on-brand message!</h1>
-            <p className='lead'>
-                <em>WestWind</em> is... give a short description.
-            </p>
-        </div>
+  <div
+    className="jumbotron jumbotron-fluid text-grey border border-dark pt-0"
+    style={style}
+  >
+    <div className="container">
+      <h1 className="display-4" style={h1Style}>
+        Welcome to Westwind Equestrian!
+      </h1>
+      <p className="lead" style={westStyle}>
+        <em>WestWind</em> provides exceptional care, training, and experiences
+        for horses and riders of all levels. We are dedicated to fostering a
+        supportive and welcoming community where equestrians can pursue their
+        passion and achieve their goals.
+      </p>
     </div>
- );
+  </div>
+);
 }
 
 export default Header;

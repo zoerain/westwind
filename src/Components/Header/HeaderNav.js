@@ -1,70 +1,80 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 function HeaderNav() {
-    const style = {
-        padding: '2rem',
+
+  const navigate = useNavigate();
+
+    const quicksand = {
+      color: "#8B4513",
+      backgroundColor: "#F0F8FF",
+      fontFamily: '"Quicksand", sansSerif',
+      fontOpticalSizing: "auto",
+      fontWeight: "650",
+      fontStyle: "normal",
+      padding: "16px",
+      position: "fixed",
+      width: "100%",
+      zIndex: "999",
     };
 
-    const italic = {
-        fonstyle: 'italic',
+    const navStyle = "font-poppins-heading nav-link mx-3";
+
+    function handleHomeClick() {
+      navigate("/");
     };
 
-    const navStyle = "font-poppins-heading nav-link mx-2 text-secondary";
+    function handleAboutClick() {
+      navigate("/about");
+    };
+
+    function handleBoardingClick() {
+      navigate("/boarding");
+    };
 
     return (
-      <ul className="nav justify-content-center border nav-bar" style={style}>
+      <ul
+        className="nav justify-content-center border nav-bar"
+        style={quicksand}
+      >
         <li className="">
-          <Link className={navStyle} to="/">
-            <h1 className="h5" style={italic}>
-              Home
-            </h1>
+          <Link onClick={handleHomeClick()} className={navStyle} to="/">
+            <h1 className="h5">Home</h1>
           </Link>
         </li>
         <li className="nav-item">
-          <Link className={navStyle}>
-            <h1 className="h5" style={italic}>
-              About
-            </h1>
+          <Link onClick={handleAboutClick()} className={navStyle}>
+            <h1 className="h5">About</h1>
+          </Link>
+        </li>
+        <li>
+          <Link onClick={handleBoardingClick()} className={navStyle}>
+            <h1 className="h5">Boarding</h1>
           </Link>
         </li>
         <li>
           <Link className={navStyle}>
-            <h1 className="h5" style={italic}>
-              Boarding
-            </h1>
+            <h1 className="h5">Horse Sales</h1>
           </Link>
         </li>
         <li>
           <Link className={navStyle}>
-            <h1 className="h5" style={italic}>
-              Horse Sales
-            </h1>
+            <h1 className="h5">Lessons</h1>
           </Link>
         </li>
         <li>
           <Link className={navStyle}>
-            <h1 className="h5" style={italic}>
-              Lessons
-            </h1>
+            <h1 className="h5">Training</h1>
           </Link>
         </li>
         <li>
           <Link className={navStyle}>
-            <h1 className="h5" style={italic}>
-              Training
-            </h1>
-          </Link>
-        </li>
-        <li>
-          <Link className={navStyle}>
-            <h1 className="h5" style={italic}>
-              Contact
-            </h1>
+            <h1 className="h5">Contact</h1>
           </Link>
         </li>
       </ul>
     );
-}
+};
 
 export default HeaderNav;

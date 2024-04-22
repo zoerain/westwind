@@ -4,7 +4,7 @@ import React from 'react';
 function ServiceList() {
 
     return (
-      <main className="container text-center text-secondary mt-50">
+      <main className="container text-center mt-50">
         <section>
           <div className="row">
             <div className="col-sm-12 col-md-6 col-lg-4 my-2">

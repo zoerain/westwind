@@ -4,8 +4,12 @@ import Header from "../Header/Header";
 
 function HomePage() {
 
+    const home = {
+        paddingBottom: '150px'
+    }
+
     return (
-        <div>
+        <div style={home}>
             <Header />
             <ServiceList />
         </div>
