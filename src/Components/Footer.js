@@ -1,6 +1,7 @@
 import React from "react";
 
 const footerStyle = {
+  marginTop: "200px",
   backgroundColor: "#F0F8FF",
   color: "#8B4513",
   padding: "20px",
@@ -15,8 +16,9 @@ const footerStyle = {
 };
 
 const footerItemStyle = {
-  marginBottom: "35px", // Add margin bottom for spacing between items
-};
+  marginBottom: "35px",
+}
+
 
 function Footer() {
   return (

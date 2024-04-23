@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+
 
 function HeaderNav() {
 
   const navigate = useNavigate();
+
 
     const quicksand = {
       color: "#8B4513",
@@ -19,59 +20,69 @@ function HeaderNav() {
       zIndex: "999",
     };
 
-    const navStyle = "font-poppins-heading nav-link mx-3";
+    const navStyle = {
+      color: "#8B4513",
+      margin: "0 10px",
+    };
+
+    const item = {
+      margin: "0 15px",
+    }
 
     function handleHomeClick() {
       navigate("/");
-    };
+    }
 
     function handleAboutClick() {
       navigate("/about");
-    };
+    }
 
     function handleBoardingClick() {
       navigate("/boarding");
-    };
+    }
+
+    function handleHorseSalesClick() {
+      navigate("/horsesales");
+    }
+
+    function handleLessonsClick() {
+      navigate("/lessons");
+    }
 
     return (
       <ul
         className="nav justify-content-center border nav-bar"
         style={quicksand}
       >
-        <li className="">
-          <Link onClick={handleHomeClick()} className={navStyle} to="/">
-            <h1 className="h5">Home</h1>
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link onClick={handleAboutClick()} className={navStyle}>
-            <h1 className="h5">About</h1>
-          </Link>
+        <li>
+          <h5 onClick={handleHomeClick} className={navStyle} style={item}>
+            Home
+          </h5>
         </li>
         <li>
-          <Link onClick={handleBoardingClick()} className={navStyle}>
-            <h1 className="h5">Boarding</h1>
-          </Link>
+          <h5 onClick={handleAboutClick} className={navStyle} style={item}>
+            About
+          </h5>
         </li>
         <li>
-          <Link className={navStyle}>
-            <h1 className="h5">Horse Sales</h1>
-          </Link>
+          <h5 onClick={handleBoardingClick} className={navStyle} style={item}>
+            Boarding
+          </h5>
         </li>
         <li>
-          <Link className={navStyle}>
-            <h1 className="h5">Lessons</h1>
-          </Link>
+          <h5 onClick={handleHorseSalesClick} className={navStyle} style={item}>
+            Horse Sales
+          </h5>
         </li>
         <li>
-          <Link className={navStyle}>
-            <h1 className="h5">Training</h1>
-          </Link>
+          <h5 onClick={handleLessonsClick} className={navStyle} style={item}>
+            Lessons
+          </h5>
         </li>
         <li>
-          <Link className={navStyle}>
-            <h1 className="h5">Contact</h1>
-          </Link>
+          <h5 className={navStyle} style={item}>
+            Training
+          </h5>
         </li>
       </ul>
     );

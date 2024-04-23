@@ -3,9 +3,9 @@ import React from 'react';
 
 function Header() {
     const style = {
-        //add 'url(${headerImage})`, to the end of background once u find a headerImage to use
-      backgroungPosition: 'center',
-      backGroundSize: '100% auto',
+      backgroungPosition: "center",
+      backGroundSize: "100% auto",
+      backgroundColor: "#F0F8FF",
     };
 
 
@@ -16,11 +16,8 @@ function Header() {
        fontStyle: "normal",
        padding: "100px",
        paddingLeft: "0px",
+       marginTop: "75px",
      };
-
-     const westStyle = {
-        color: "#8B4513",
-     }
 
 return (
   <div
@@ -31,8 +28,8 @@ return (
       <h1 className="display-4" style={h1Style}>
         Welcome to Westwind Equestrian!
       </h1>
-      <p className="lead" style={westStyle}>
-        <em>WestWind</em> provides exceptional care, training, and experiences
+      <p className="lead" style={{ color: "#8B4513" }}>
+        <em>Westwind</em> provides exceptional care, training, and experiences
         for horses and riders of all levels. We are dedicated to fostering a
         supportive and welcoming community where equestrians can pursue their
         passion and achieve their goals.

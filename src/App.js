@@ -4,6 +4,8 @@ import HeaderNav from "./Components/Header/HeaderNav";
 import Footer from "./Components/Footer";
 import AboutPage from "./Components/AboutPage";
 import BoardingPage from "./Components/BoardingPage";
+import HorseSales from "./Components/HorseSales/HorseSales";
+
 import "./App.css";
 
 function App() {
@@ -14,6 +16,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/boarding" element={<BoardingPage />} />
+        <Route path="/horsesales" element={<HorseSales />} />
+        
       </Routes>
       <Footer />
     </BrowserRouter>
