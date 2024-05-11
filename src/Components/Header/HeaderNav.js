@@ -49,6 +49,10 @@ function HeaderNav() {
       navigate("/lessons");
     }
 
+    function handleTrainingClick() {
+      navigate("/training");
+    }
+
     return (
       <ul
         className="nav justify-content-center border nav-bar"
@@ -80,7 +84,7 @@ function HeaderNav() {
           </h5>
         </li>
         <li>
-          <h5 className={navStyle} style={item}>
+          <h5 onClick={handleTrainingClick} className={navStyle} style={item}>
             Training
           </h5>
         </li>

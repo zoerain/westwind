@@ -1,7 +1,6 @@
 import React from "react";
 
 const footerStyle = {
-  marginTop: "200px",
   backgroundColor: "#F0F8FF",
   color: "#8B4513",
   padding: "20px",

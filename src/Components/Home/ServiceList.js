@@ -1,10 +1,7 @@
 import React from 'react';
-import { useNavigate } from "react-router-dom";
 
 
 function ServiceList() {
-
-  const navigate = useNavigate();
 
   const serviceStyle = {
     fontFamily: '"Abril Fatface", serif',
@@ -34,7 +31,8 @@ function ServiceList() {
       <main className="container text-center mt-50" style={serviceStyle}>
         <section>
           <div className="row">
-            <div className="col-sm-12 col-md-6 col-lg-4 my-6 mx-auto">
+            <div
+              className="flex col col-sm-12 col-md-6 col-lg-4 my-6 mx-auto">
               <div className="card custom-card" style={boardingStyle}>
                 <div className="card-body">
                   <h5 className="card-title">Boarding</h5>
@@ -44,7 +42,8 @@ function ServiceList() {
                 </div>
               </div>
             </div>
-            <div className="col-sm-12 col-md-6 col-lg-4 my-6 mx-auto">
+            <div
+              className="flex col col-sm-12 col-md-6 col-lg-4 my-6 mx-auto">
               <div className="card custom-card" style={horseSalesStyle}>
                 <div className="card-body">
                   <h5 className="card-title">Horse Sales</h5>
@@ -54,7 +53,8 @@ function ServiceList() {
                 </div>
               </div>
             </div>
-            <div className="col-sm-12 col-md-6 col-lg-4 my-6 mx-auto">
+            <div
+              className="flex col col-sm-12 col-md-6 col-lg-4 my-6 mx-auto">
               <div className="card custom-card">
                 <div className="card-body">
                   <h5 className="card-title">Events/Clinics</h5>
@@ -64,7 +64,10 @@ function ServiceList() {
                 </div>
               </div>
             </div>
-            <div className="col-sm-12 col-md-6 col-lg-4 my-6 mx-auto">
+            <div
+              className="flex col col-sm-12 col-md-6 col-lg-4 my-6 mx-auto"
+              style={{ marginTop: "150px", marginBottom: "150px" }}
+            >
               <div className="card custom-card">
                 <div className="card-body">
                   <h5 className="card-title">Training</h5>
@@ -74,7 +77,10 @@ function ServiceList() {
                 </div>
               </div>
             </div>
-            <div className="col-sm-12 col-md-6 col-lg-4 my-6 mx-auto">
+            <div
+              className="flex col col-sm-12 col-md-6 col-lg-4 my-6 mx-auto"
+              style={{ marginTop: "150px", marginBottom: "150px" }}
+            >
               <div className="card custom-card">
                 <div className="card-body">
                   <h5 className="card-title">Lessons</h5>
