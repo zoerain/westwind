@@ -1,35 +1,17 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import React from "react";
+import { Link } from "react-router-dom";
 
-function HorseForm({ horse }) {
-  const navigate = useNavigate();
-  const [formData, setFormData] = useState(
-    horse || { breed: "", photo: "", description: "", horseId: "" }
-  );
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      await axios.post("https://westwindexpress.onrender.com/horses", formData);
-      navigate("/horsesales");
-    } catch (error) {
-      console.error("Something went wrong", error);
-    }
-  };
-
-  const handleChange = ({ target }) => {
-    setFormData({ ...formData, [target.name]: target.value });
-  };
+function HorseForm({ submitForm, changeForm, horse }) {
 
   const formStyle = {
     marginTop: "150px",
-    marginBotton: "150px",
+    marginBottom: "150px",
   };
+
 
   return (
     <div className="container" style={formStyle}>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={submitForm}>
         <div className="form-group">
           <label htmlFor="breed">Breed:</label>
           <input
@@ -37,8 +19,8 @@ function HorseForm({ horse }) {
             className="form-control"
             id="breed"
             name="breed"
-            value={formData.breed}
-            onChange={handleChange}
+            value={horse.breed}
+            onChange={changeForm}
             required
           />
         </div>
@@ -49,8 +31,8 @@ function HorseForm({ horse }) {
             className="form-control"
             id="photo"
             name="photo"
-            value={formData.photo}
-            onChange={handleChange}
+            value={horse.photo}
+            onChange={changeForm}
             required
           />
         </div>
@@ -60,9 +42,9 @@ function HorseForm({ horse }) {
             className="form-control"
             id="description"
             name="description"
-            rows="3"
-            value={formData.description}
-            onChange={handleChange}
+            rows="5"
+            value={horse.description}
+            onChange={changeForm}
             required
           ></textarea>
         </div>

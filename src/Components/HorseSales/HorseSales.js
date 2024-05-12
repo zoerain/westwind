@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Horse from "./Horse";
-const axios = require("axios");
+import axios from "axios";
 
 function HorseSales() {
 
@@ -10,7 +10,7 @@ function HorseSales() {
 
     const horsesStyle = {
         marginTop: "150px",
-        marginBotton: "150px",
+        marginBottom: "150px",
     };
 
     
@@ -22,7 +22,7 @@ function HorseSales() {
                 const response = await axios.get(
                   "https://westwindexpress.onrender.com/horses"
                 );
-                  setHorses(response);
+                  setHorses(response.data);
             } catch (error) {
                 if (error.name !== 'AbortError') {
                     throw error;
@@ -33,7 +33,7 @@ function HorseSales() {
             };
         }
         fetchHorses();
-    }, [horses])
+    }, [])
     
     async function handleDelete(horse) {
         const confirm = window.confirm("Delete this horse from the sales list? You will not be able to recover it.");
