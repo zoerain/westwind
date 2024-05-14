@@ -33,13 +33,6 @@ function AddHorse() {
 
     return (
         <div className="col-9 mx-auto">
-            <nav aria-label="breadcrumb">
-                <ol className="breadcrumb">
-                    <li className="breadcrumb-item">
-                        <Link to={"/horsesales"}></Link>
-                    </li>
-                </ol>
-            </nav>
             <div className="row pl-3 pb-2">
                 <HorseForm
                     submitForm={submitForm}

@@ -27,7 +27,7 @@ function HorseForm({ submitForm, changeForm, horse }) {
         <div className="form-group">
           <label htmlFor="photo">Photo URL:</label>
           <input
-            type="text"
+            type="url"
             className="form-control"
             id="photo"
             name="photo"
