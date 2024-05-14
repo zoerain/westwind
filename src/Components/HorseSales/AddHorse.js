@@ -16,7 +16,7 @@ function AddHorse() {
       try {
         await axios.post(
           "https://westwindexpress.onrender.com/horses",
-          horse
+          { data: horse }
         );
         console.log("Horse saved!")
         setHorse({ breed: "", photo: "", description: "" });
@@ -29,6 +29,7 @@ function AddHorse() {
     const changeForm = ({ target }) => {
       setHorse({ ...horse, [target.name]: target.value });
     };
+
 
     return (
         <div className="col-9 mx-auto">

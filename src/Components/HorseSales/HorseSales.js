@@ -4,60 +4,65 @@ import Horse from "./Horse";
 import axios from "axios";
 
 function HorseSales() {
+  const [horses, setHorses] = useState([]);
+  const navigate = useNavigate();
 
-    const [horses, setHorses] = useState([]);
-    const navigate = useNavigate();
+  const horsesStyle = {
+    marginTop: "150px",
+    marginBottom: "150px",
+  };
 
-    const horsesStyle = {
-        marginTop: "150px",
-        marginBottom: "150px",
-    };
+  // Fetch all horses data
+  useEffect(() => {
+    async function fetchHorses() {
+      try {
+        const response = await axios.get(
+          "https://westwindexpress.onrender.com/horses"
+        );
+        setHorses(response.data);
+      } catch (error) {
+        console.error("Error fetching horses:", error);
+      }
+    }
+    fetchHorses();
+  }, []);
 
-    
-    //fetch all horses data
-    useEffect(() => {
-        async function fetchHorses() {
-            const abortController = new AbortController();
-            try {
-                const response = await axios.get(
-                  "https://westwindexpress.onrender.com/horses"
-                );
-                  setHorses(response.data);
-            } catch (error) {
-                if (error.name !== 'AbortError') {
-                    throw error;
-                }
-            }
-            return () => {
-                abortController.abort();
-            };
-        }
-        fetchHorses();
-    }, [])
-    
-    async function handleDelete(horse) {
-        const confirm = window.confirm("Delete this horse from the sales list? You will not be able to recover it.");
-        if (confirm) {
-            //await deleteHorse(horse.id);
-            navigate("/horsesales");
-        }
-    };
+  // Handle deletion of a horse
+  async function handleDelete(horseId) {
+    try {
+      await axios.delete(
+        `https://westwindexpress.onrender.com/horses/${horseId}`
+      );
+      console.log("Horse deleted");
+      setHorses(horses.filter((horse) => horse.id !== horseId));
+      navigate("/horsesales");
+    } catch (error) {
+      console.error("Something went wrong", error);
+    }
+  }
 
-    return (
-      <div className="container">
-        <Link className="btn btn-secondary mb-2" to="/horsesales/new">
-          Add Horse
-        </Link>
-        <div className="row">
-          {horses.map((horse) => (
-            <div className="row col-lg-12 col-md-12 col-sm-12 mx-auto" key={horse.id} style={horsesStyle}>
-              <Horse horse={horse} onDelete={handleDelete} />
-            </div>
-          ))}
-        </div>
+  return (
+    <div className="container">
+      <Link
+        className="btn btn-secondary mb-2"
+        to="/horsesales/addhorse"
+        style={{ marginTop: "150px" }}
+      >
+        Add Horse
+      </Link>
+      <div className="row">
+        {horses.map((horse) => (
+          <div
+            className="row col-lg-12 col-md-12 col-sm-12 mx-auto"
+            key={horse.id}
+            style={horsesStyle}
+          >
+            <Horse horse={horse} onDelete={() => handleDelete(horse.id)} />
+          </div>
+        ))}
       </div>
-    );
-};
-
+    </div>
+  );
+}
 
 export default HorseSales;
